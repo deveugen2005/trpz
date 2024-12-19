@@ -1,0 +1,11 @@
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\bin\Debug\Lab8.exe.config
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\bin\Debug\Lab8.exe
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\bin\Debug\Lab8.pdb
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.csproj.AssemblyReference.cache
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.Form1.resources
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.Properties.Resources.resources
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.csproj.GenerateResource.cache
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.exe
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.pdb
+C:\Users\ostap\OneDrive\Документи\Роботи FreeLance\ЯРИК Пальиа\Lab8\Lab8\obj\Debug\Lab8.Form2.resources
