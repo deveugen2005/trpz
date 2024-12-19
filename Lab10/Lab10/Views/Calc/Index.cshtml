@@ -1,0 +1,32 @@
+﻿@model Lab10.Models.OperandsModel 
+@{
+    ViewData["Title"] = "Обчислення функції";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Обчислення функції</title>
+</head>
+<body>
+    <h2>Обчислення значення функції y = 5(x-3)^6 - 4(x-8)^4 + 42</h2>
+    <div>
+        @using (Html.BeginForm("Index", "Calc", FormMethod.Post))
+        {
+            <label for="x">Значення x:</label>
+            @Html.TextAreaFor(m => m.X);
+            <br />
+
+            <br />
+            <input type="submit" value="Обчислити" />
+        }
+
+        @if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+        {
+            <p>@ViewBag.Result</p>
+        }
+    </div>
+</body>
+</html>
