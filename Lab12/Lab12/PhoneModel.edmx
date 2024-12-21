@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PhoneDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BrandPrice">
+          <Key>
+            <PropertyRef Name="BrandPriceID" />
+          </Key>
+          <Property Name="BrandPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriceID" Type="int" />
+          <Property Name="BrandID" Type="int" />
+        </EntityType>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="PriceID" />
+          </Key>
+          <Property Name="PriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__BrandPric__Brand__3B75D760">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandID" />
+            </Principal>
+            <Dependent Role="BrandPrice">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BrandPric__Price__3A81B327">
+          <End Role="Price" Type="Self.Price" Multiplicity="0..1" />
+          <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Price">
+              <PropertyRef Name="PriceID" />
+            </Principal>
+            <Dependent Role="BrandPrice">
+              <PropertyRef Name="PriceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PhoneDBModelStoreContainer">
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrandPrice" EntityType="Self.BrandPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Price" EntityType="Self.Price" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BrandPric__Brand__3B75D760" Association="Self.FK__BrandPric__Brand__3B75D760">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="BrandPrice" EntitySet="BrandPrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BrandPric__Price__3A81B327" Association="Self.FK__BrandPric__Price__3A81B327">
+            <End Role="Price" EntitySet="Price" />
+            <End Role="BrandPrice" EntitySet="BrandPrice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhoneDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BrandPrice" Relationship="Self.FK__BrandPric__Brand__3B75D760" FromRole="Brand" ToRole="BrandPrice" />
+        </EntityType>
+        <EntityType Name="BrandPrice">
+          <Key>
+            <PropertyRef Name="BrandPriceID" />
+          </Key>
+          <Property Name="BrandPriceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PriceID" Type="Int32" />
+          <Property Name="BrandID" Type="Int32" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK__BrandPric__Brand__3B75D760" FromRole="BrandPrice" ToRole="Brand" />
+          <NavigationProperty Name="Price" Relationship="Self.FK__BrandPric__Price__3A81B327" FromRole="BrandPrice" ToRole="Price" />
+        </EntityType>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="PriceID" />
+          </Key>
+          <Property Name="PriceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Price1" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BrandPrice" Relationship="Self.FK__BrandPric__Price__3A81B327" FromRole="Price" ToRole="BrandPrice" />
+        </EntityType>
+        <Association Name="FK__BrandPric__Brand__3B75D760">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandID" />
+            </Principal>
+            <Dependent Role="BrandPrice">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BrandPric__Price__3A81B327">
+          <End Role="Price" Type="Self.Price" Multiplicity="0..1" />
+          <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Price">
+              <PropertyRef Name="PriceID" />
+            </Principal>
+            <Dependent Role="BrandPrice">
+              <PropertyRef Name="PriceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PhoneDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Brand" EntityType="Self.Brand" />
+          <EntitySet Name="BrandPrice" EntityType="Self.BrandPrice" />
+          <EntitySet Name="Price" EntityType="Self.Price" />
+          <AssociationSet Name="FK__BrandPric__Brand__3B75D760" Association="Self.FK__BrandPric__Brand__3B75D760">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="BrandPrice" EntitySet="BrandPrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BrandPric__Price__3A81B327" Association="Self.FK__BrandPric__Price__3A81B327">
+            <End Role="Price" EntitySet="Price" />
+            <End Role="BrandPrice" EntitySet="BrandPrice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhoneDBModelStoreContainer" CdmEntityContainer="PhoneDBEntities">
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="PhoneDBModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrandPrice">
+            <EntityTypeMapping TypeName="PhoneDBModel.BrandPrice">
+              <MappingFragment StoreEntitySet="BrandPrice">
+                <ScalarProperty Name="BrandPriceID" ColumnName="BrandPriceID" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Price">
+            <EntityTypeMapping TypeName="PhoneDBModel.Price">
+              <MappingFragment StoreEntitySet="Price">
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="Price1" ColumnName="Price" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

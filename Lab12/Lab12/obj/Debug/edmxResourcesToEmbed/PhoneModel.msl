@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhoneDBModelStoreContainer" CdmEntityContainer="PhoneDBEntities">
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="PhoneDBModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrandPrice">
+      <EntityTypeMapping TypeName="PhoneDBModel.BrandPrice">
+        <MappingFragment StoreEntitySet="BrandPrice">
+          <ScalarProperty Name="BrandPriceID" ColumnName="BrandPriceID" />
+          <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Price">
+      <EntityTypeMapping TypeName="PhoneDBModel.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+          <ScalarProperty Name="Price1" ColumnName="Price" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

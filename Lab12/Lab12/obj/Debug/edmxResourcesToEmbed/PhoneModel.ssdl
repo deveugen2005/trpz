@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BrandPrice">
+    <Key>
+      <PropertyRef Name="BrandPriceID" />
+    </Key>
+    <Property Name="BrandPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceID" Type="int" />
+    <Property Name="BrandID" Type="int" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="PriceID" />
+    </Key>
+    <Property Name="PriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BrandPric__Brand__3B75D760">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="BrandPrice">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BrandPric__Price__3A81B327">
+    <End Role="Price" Type="Self.Price" Multiplicity="0..1" />
+    <End Role="BrandPrice" Type="Self.BrandPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="PriceID" />
+      </Principal>
+      <Dependent Role="BrandPrice">
+        <PropertyRef Name="PriceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneDBModelStoreContainer">
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrandPrice" EntityType="Self.BrandPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Price" EntityType="Self.Price" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BrandPric__Brand__3B75D760" Association="Self.FK__BrandPric__Brand__3B75D760">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="BrandPrice" EntitySet="BrandPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BrandPric__Price__3A81B327" Association="Self.FK__BrandPric__Price__3A81B327">
+      <End Role="Price" EntitySet="Price" />
+      <End Role="BrandPrice" EntitySet="BrandPrice" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
