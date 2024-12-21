@@ -1,0 +1,14 @@
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\bin\Debug\net8.0-windows\PrintEditionsApp.exe
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\bin\Debug\net8.0-windows\PrintEditionsApp.deps.json
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\bin\Debug\net8.0-windows\PrintEditionsApp.runtimeconfig.json
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\bin\Debug\net8.0-windows\PrintEditionsApp.dll
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\bin\Debug\net8.0-windows\PrintEditionsApp.pdb
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.AssemblyInfoInputs.cache
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.AssemblyInfo.cs
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.csproj.CoreCompileInputs.cache
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.dll
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\refint\PrintEditionsApp.dll
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.pdb
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\PrintEditionsApp.genruntimeconfig.cache
+C:\Users\Cthelll\Desktop\laba\PrintEditionsApp\obj\Debug\net8.0-windows\ref\PrintEditionsApp.dll
