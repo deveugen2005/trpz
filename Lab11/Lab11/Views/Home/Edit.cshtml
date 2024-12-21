@@ -1,0 +1,30 @@
+﻿@model Brand
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Brand</legend>
+
+        <div class="editor-lable">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-lable">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name);
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
